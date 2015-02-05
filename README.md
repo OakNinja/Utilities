@@ -1,2 +1,2 @@
 # Utilities
-Just some useful c# utility classes 
+Just some useful c# utility classes. 
