@@ -28,14 +28,14 @@ namespace Oni.Utilities
         }
 
         /// <summary>
-        /// <para>Add item to list if value ifExpressionReturnsTrue returns true, otherwise silently ignore </para>
-        /// <para>If item creation is declared on Add it will never be Created and Initialized if ifExpressionReturnsTrue false.</para> 
+        /// <para>Add item to list if addIfExpressionReturnsTrue returns true, otherwise silently ignore </para>
+        /// <para>If item creation is declared on Add it will never be Created and Initialized if addIfExpressionReturnsTrue returns false.</para> 
         /// <para>&#160;</para>
         /// <para>Usage:</para> 
-        /// <para>list.Add(() => new TItem(args), checkNotNullOrEmpty);</para>
+        /// <para>list.Add(() => new TItem(args), Func<bool>(expression));</para>
         /// <para>&#160;</para>
         /// <para>Example:</para>
-        /// <para>list.Add(() => new Product(product.Id, product.Name, product.Category), product.Name);</para> 
+        /// <para>list.Add(() => new Product(), Func<bool>(string.Length >= 2));</para> 
         /// </summary>
         /// <typeparam name="TItem"></typeparam>
         /// <typeparam name="TValue"></typeparam>
