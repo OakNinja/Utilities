@@ -10,10 +10,10 @@ namespace Oni.Utilities
     {
         public static void CheckValueNotNullOrEmptyAction<T>(Action action, T value)
         {
-            var itemAsString = value as string;
-            if (itemAsString != null)
+            var valueAsString = value as string;
+            if (valueAsString != null)
             {
-                if (!string.IsNullOrEmpty(itemAsString))
+                if (!string.IsNullOrEmpty(valueAsString))
                     action();
             }
             else if (value != null)

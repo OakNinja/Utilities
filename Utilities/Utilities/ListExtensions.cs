@@ -27,6 +27,8 @@ namespace Oni.Utilities
             Common.CheckValueNotNullOrEmptyAction(() => list.Add(item()), checkNotNullOrEmpty);
         }
 
+
+        //Overload collides with the signature above, using a predicate would solve the problem
         /// <summary>
         /// <para>Add item to list if addIfExpressionReturnsTrue returns true, otherwise silently ignore </para>
         /// <para>If item creation is declared on Add it will never be Created and Initialized if addIfExpressionReturnsTrue returns false.</para> 
