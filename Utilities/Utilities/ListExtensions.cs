@@ -28,7 +28,6 @@ namespace Oni.Utilities
         }
 
 
-        //Overload collides with the signature above, using a predicate would solve the problem
         /// <summary>
         /// <para>Add item to list if addIfExpressionReturnsTrue returns true, otherwise silently ignore </para>
         /// <para>If item creation is declared on Add it will never be Created and Initialized if addIfExpressionReturnsTrue returns false.</para> 
@@ -40,13 +39,12 @@ namespace Oni.Utilities
         /// <para>list.Add(() => new Product(), Func<bool>(string.Length >= 2));</para> 
         /// </summary>
         /// <typeparam name="TItem"></typeparam>
-        /// <typeparam name="TValue"></typeparam>
         /// <param name="list"></param>
         /// <param name="item"></param>
-        /// <param name="checkNotNullOrEmpty"></param>
-        public static void Add<TItem, TValue>(this IList<TItem> list, Func<TItem> item, Func<bool> addIfExpressionReturnsTrue)
+        /// <param name="ignoreIfExpressionReturnsFalse"></param>
+        public static void Add<TItem>(this IList<TItem> list, Func<TItem> item, Func<bool> ignoreIfExpressionReturnsFalse)
         {
-            if (addIfExpressionReturnsTrue())
+            if (ignoreIfExpressionReturnsFalse())
                 list.Add(item());
         }
 

@@ -224,8 +224,6 @@ namespace Oni.Utilities.Tests
         }
 
 
-        //Overload collides with another overload signature
-        [Ignore]
         [TestCase]
         public static void Add_AddStringIfExpressionReturnsTrue_ExpectNotAddedToList()
         {
@@ -233,7 +231,7 @@ namespace Oni.Utilities.Tests
 
             string toShort = "ABC";
 
-            list.Add(() => new ChildClass(""), toShort.Length >= 4);
+            list.Add(() => new ChildClass(""), () => toShort.Length > 3);
 
             Assert.IsFalse(list.Any());
         }
