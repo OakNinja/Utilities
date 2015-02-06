@@ -182,7 +182,7 @@ namespace Oni.Utilities.Tests
         }
 
         [TestCase]
-        public static void Add_Add_ObjectWithProperyToList_ExpectAddedToList()
+        public static void Add_AddObjectWithProperyToList_ExpectAddedToList()
         {
             var list = new List<Product>();
 
@@ -192,7 +192,7 @@ namespace Oni.Utilities.Tests
         }
 
         [TestCase]
-        public static void Add_Add_EmptyStringInitializedObjectToList_ExpectNotAddedToList()
+        public static void Add_AddEmptyStringInitializedObjectToList_ExpectNotAddedToList()
         {
             var list = new List<BaseClass>();
 
