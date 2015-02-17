@@ -1,0 +1,9 @@
+C:\Projects\GitHub\Utilities\Utilities\Utilities.Tests\bin\Debug\Utilities.Tests.dll
+C:\Projects\GitHub\Utilities\Utilities\Utilities.Tests\bin\Debug\Utilities.Tests.pdb
+C:\Projects\GitHub\Utilities\Utilities\Utilities.Tests\bin\Debug\nunit.framework.dll
+C:\Projects\GitHub\Utilities\Utilities\Utilities.Tests\bin\Debug\Utilities.dll
+C:\Projects\GitHub\Utilities\Utilities\Utilities.Tests\bin\Debug\Utilities.pdb
+C:\Projects\GitHub\Utilities\Utilities\Utilities.Tests\bin\Debug\nunit.framework.xml
+C:\Projects\GitHub\Utilities\Utilities\Utilities.Tests\obj\Debug\Utilities.Tests.csprojResolveAssemblyReference.cache
+C:\Projects\GitHub\Utilities\Utilities\Utilities.Tests\obj\Debug\Utilities.Tests.dll
+C:\Projects\GitHub\Utilities\Utilities\Utilities.Tests\obj\Debug\Utilities.Tests.pdb

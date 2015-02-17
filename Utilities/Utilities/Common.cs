@@ -6,25 +6,26 @@ using System.Threading.Tasks;
 
 namespace Oni.Utilities
 {
-    public class Common
+    public class CheckValue
     {
-        public static void CheckValueNotNullOrEmptyAction<T>(Action action, T value)
+        public static void NotNullOrEmpty<T>(Action action, T value)
+        {
+            if (value == null || IsEmptyString(value))
+                return;
+            action();
+        }
+
+        public static void NotNullOrEmpty<T>(Action action, Func<T> value)
+        {
+            NotNullOrEmpty(action, value());
+        }
+
+        private static bool IsEmptyString<T>(T value)
         {
             var valueAsString = value as string;
-            if (valueAsString != null)
-            {
-                if (!string.IsNullOrEmpty(valueAsString))
-                    action();
-            }
-            else if (value != null)
-                action();
-        }
-
-
-
-        public static void CheckValueNotNullOrEmptyAction<T>(Action action, Func<T> value)
-        {
-            CheckValueNotNullOrEmptyAction(action, value());
+            return (valueAsString != null && string.IsNullOrEmpty(valueAsString));
         }
     }
+
+
 }

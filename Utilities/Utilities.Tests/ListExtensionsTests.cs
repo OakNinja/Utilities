@@ -129,6 +129,7 @@ namespace Oni.Utilities.Tests
 
             list.Add(() => baseC, baseC);
 
+
             Assert.IsFalse(list.Any());
         }
 
@@ -186,7 +187,9 @@ namespace Oni.Utilities.Tests
         {
             var list = new List<Product>();
 
-            list.Add(() => new Product() { Name = "Name" }, "Name");
+            var productName = "Name";
+
+            list.Add(() => new Product() { Name = productName }, productName);
 
             Assert.IsTrue(list.Any());
         }
@@ -220,6 +223,12 @@ namespace Oni.Utilities.Tests
             
             list.Add(() => new ChildClass("String"), "String");
 
+            if (!string.IsNullOrEmpty("String"))
+            {
+                list.Add(new ChildClass("String")); 
+            }
+            
+
             Assert.IsTrue(list.Any());
         }
 
@@ -229,9 +238,9 @@ namespace Oni.Utilities.Tests
         {
             var list = new List<BaseClass>();
 
-            string toShort = "ABC";
+            string param = "ABC";
 
-            list.Add(() => new ChildClass(""), () => toShort.Length > 3);
+            list.Add(() => new ChildClass(param), () => 1 == 0 );
 
             Assert.IsFalse(list.Any());
         }

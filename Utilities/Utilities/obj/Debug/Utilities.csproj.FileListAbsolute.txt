@@ -1,0 +1,5 @@
+C:\Projects\GitHub\Utilities\Utilities\Utilities\bin\Debug\Utilities.dll
+C:\Projects\GitHub\Utilities\Utilities\Utilities\bin\Debug\Utilities.pdb
+C:\Projects\GitHub\Utilities\Utilities\Utilities\obj\Debug\Utilities.dll
+C:\Projects\GitHub\Utilities\Utilities\Utilities\obj\Debug\Utilities.pdb
+C:\Projects\GitHub\Utilities\Utilities\Utilities\obj\Debug\Utilities.csprojResolveAssemblyReference.cache

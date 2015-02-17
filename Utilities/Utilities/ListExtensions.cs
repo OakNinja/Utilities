@@ -24,27 +24,27 @@ namespace Oni.Utilities
         /// <param name="checkNotNullOrEmpty"></param>
         public static void Add<TItem, TValue>(this IList<TItem> list, Func<TItem> item, TValue checkNotNullOrEmpty)
         {
-            Common.CheckValueNotNullOrEmptyAction(() => list.Add(item()), checkNotNullOrEmpty);
+            CheckValue.NotNullOrEmpty(() => list.Add(item()), checkNotNullOrEmpty);
         }
 
 
         /// <summary>
-        /// <para>Add item to list if addIfExpressionReturnsTrue returns true, otherwise silently ignore </para>
-        /// <para>If item creation is declared on Add it will never be Created and Initialized if addIfExpressionReturnsTrue returns false.</para> 
+        /// <para>Add item to list if assert returns true, otherwise silently ignore </para>
+        /// <para>If item creation is declared on Add it will never be Created and Initialized if assert returns false.</para> 
         /// <para>&#160;</para>
         /// <para>Usage:</para> 
-        /// <para>list.Add(() => new TItem(args), Func<bool>(expression));</para>
+        /// <para>list.Add(() => new TItem(args), () => (expression));</para>
         /// <para>&#160;</para>
         /// <para>Example:</para>
-        /// <para>list.Add(() => new Product(), Func<bool>(string.Length >= 2));</para> 
+        /// <para>list.Add(() => new Product(), ()=> (string.Length >= 2));</para> 
         /// </summary>
         /// <typeparam name="TItem"></typeparam>
         /// <param name="list"></param>
         /// <param name="item"></param>
-        /// <param name="ignoreIfExpressionReturnsFalse"></param>
-        public static void Add<TItem>(this IList<TItem> list, Func<TItem> item, Func<bool> ignoreIfExpressionReturnsFalse)
+        /// <param name="assert"></param>
+        public static void Add<TItem>(this IList<TItem> list, Func<TItem> item, Func<bool> assert)
         {
-            if (ignoreIfExpressionReturnsFalse())
+            if (assert())
                 list.Add(item());
         }
 
@@ -58,7 +58,7 @@ namespace Oni.Utilities
         /// <param name="item"></param>
         public static void AddIfNotNullOrEmpty<TItem>(this IList<TItem> list, Func<TItem> item)
         {
-            Common.CheckValueNotNullOrEmptyAction(() => list.Add(item()), item);
+            CheckValue.NotNullOrEmpty(() => list.Add(item()), item);
         }
 
         #endregion
